@@ -8,6 +8,14 @@ export default class SocketServer {
         this.port = port
         this.namespaces = {}
     }
+    // [
+    //     {
+    //         room: {
+    //             events,
+    //             eventEmitter
+    //         }
+    //     }
+    // ]
 
     attachEvents({ routeConfig }) {
         for (const routes of routeConfig) {
