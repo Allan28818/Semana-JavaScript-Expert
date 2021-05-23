@@ -6,6 +6,7 @@ const roomGrid = document.getElementById('roomGrid')
 const btnCreateRoomWithTopic = document.getElementById('btnCreateRoomWithTopic')
 const btnCreateRoomWithoutTopic = document.getElementById('btnCreateRoomWithoutTopic')
 const txtTopic = document.getElementById('txtTopic')
+const imgUser = document.getElementById('imgUser')
 
 export default class View {
     static clearRoomList() {
@@ -15,7 +16,7 @@ export default class View {
         return `./../room/index.html?id=${id}&topic=${topic}`
     }
 
-    static redirectToRoom(topic = '') {
+    static redirectToRoom(topic = '') {        
         const id = Date.now().toString(36) + Math.random().toString(36).substring(2)
         window.location = View.generateRoomLink({
             id, 
