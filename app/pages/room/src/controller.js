@@ -77,7 +77,7 @@ export default class RoomController {
             const callerId = call.peer
             console.log('onStreamReceived', call, stream)
             const { isCurrentId } = this.roomService.addReceivedPeer(call)
-            // console.warn('audio desabilitado')
+
             this.view.renderAudioElement({
                 callerId,
                 stream,
@@ -117,7 +117,7 @@ export default class RoomController {
             console.error('deu ruim', error)
         }
     }
-    // quando a conexao for aberta ele pede para entrar na sala do socket
+
     onPeerConnectionOpened() {
         return (peer) => {
             console.log('peeeeer', peer)
@@ -168,8 +168,7 @@ export default class RoomController {
             const attendee = new Attendee(data)
             console.log('user connected!', attendee)
             this.view.addAttendeeOnGrid(attendee)
-
-            // vamos ligar!!
+            
             this.roomService.callNewUser(attendee)
         }
     }
